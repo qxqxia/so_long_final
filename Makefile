@@ -18,14 +18,15 @@ CFLAGS = -Wall -Wextra -Werror
 
 DEBUG = -fsanitize=address -g3
 
-MLXFLAGS = -lmlx -framework OpenGL -framework AppKit
+MLXFLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit
 
 SRC = images.c \
 	  so_long.c \
 	  check_arguments.c\
 	  check_map.c \
 	  key_mouse_event.c \
-	  movement.c \
+	  move_horizontal.c \
+	  move_vertical.c \
 	  so_long_utils.c \
 	  fini_game.c \
 	  gnl/get_next_line.c \

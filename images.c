@@ -35,25 +35,20 @@ void	image_to_win(t_data *data)
 	int	j;
 
 	i = 0;
-	while (data->map[i])
+	while (i < data->row)
 	{
 		j = 0;
-		while (data->map[i][j])
+		while (j < data->col)
 		{
-			mlx_put_image_to_window(data->mlx_ptr, \
-					data->win_ptr, data->floor, (32 * j), (32 * i));
+			mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->floor, (32 * j), (32 * i));
 			if (data->map[i][j] == 'P')
-				mlx_put_image_to_window(data->mlx_ptr, \
-						data->win_ptr, data->sprite, (32 * j), (32 * i));
+				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->sprite, (32 * j), (32 * i));
 			else if (data->map[i][j] == '1')
-				mlx_put_image_to_window(data->mlx_ptr, \
-						data->win_ptr, data->wall, (32 * j), (32 * i));
+				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->wall, (32 * j), (32 * i));
 			else if (data->map[i][j] == 'C')
-				mlx_put_image_to_window(data->mlx_ptr, \
-						data->win_ptr, data->collect, (32 * j), (32 * i));
+				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->collect, (32 * j), (32 * i));
 			else if (data->map[i][j] == 'E')
-				mlx_put_image_to_window(data->mlx_ptr, \
-						data->win_ptr, data->door, (32 * j), (32 * i));
+				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->door, (32 * j), (32 * i));
 			j++;
 		}
 	i++;
