@@ -18,7 +18,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 DEBUG = -fsanitize=address -g3
 
-MLXFLAGS = -lmlx -framework OpenGL -framework AppKit
+MLXFLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit
 
 SRC = src/images.c \
 	  src/so_long.c \
