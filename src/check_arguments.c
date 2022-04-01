@@ -6,11 +6,11 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:34:06 by qxia              #+#    #+#             */
-/*   Updated: 2022/03/31 16:03:47 by qxia             ###   ########.fr       */
+/*   Updated: 2022/04/01 09:58:02 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 static void	ft_check_ber(char *filename)
 {

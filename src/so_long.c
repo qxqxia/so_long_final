@@ -6,11 +6,11 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 11:16:54 by qxia              #+#    #+#             */
-/*   Updated: 2022/03/31 16:50:22 by qxia             ###   ########.fr       */
+/*   Updated: 2022/04/01 10:19:39 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	read_line(t_data *data, char *file)
 {

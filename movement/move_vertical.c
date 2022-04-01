@@ -6,34 +6,34 @@
 /*   By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 00:53:00 by qinxia            #+#    #+#             */
-/*   Updated: 2022/04/01 00:53:00 by qinxia           ###   ########.fr       */
+/*   Updated: 2022/04/01 09:47:39 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"so_long.h"
+#include "../so_long.h"
 
-void position_move_v(t_data *data, t_pos pos, int n, t_pos_e *check_e)
+void	position_move_v(t_data *data, t_pos pos, int n, t_pos_e *check_e)
 {
-		if (data->map[pos.i + n][pos.j] == 'E')
-		{
-			check_e->old_e_x = pos.j;
-			check_e->old_e_y = pos.i + n;
-			check_e->check_e = 0;
-		}
-		data->map[pos.i + n][pos.j] = 'P';
-		data->map[pos.i][pos.j] = '0';
-		if (check_e->old_e_x != -1 && \
+	if (data->map[pos.i + n][pos.j] == 'E')
+	{
+		check_e->old_e_x = pos.j;
+		check_e->old_e_y = pos.i + n;
+		check_e->check_e = 0;
+	}
+	data->map[pos.i + n][pos.j] = 'P';
+	data->map[pos.i][pos.j] = '0';
+	if (check_e->old_e_x != -1 && \
 				check_e->old_e_y != -1 && check_e->check_e != 0)
-		{
-			data->map[check_e->old_e_y][check_e->old_e_x] = 'E';
-			check_e->old_e_x = -1;
-			check_e->old_e_y = -1;
-		}
-		destroy(data);
-		xpm_to_image(data);
-		image_to_win(data);
-		ft_putstr_fd("\rmovements total: ", 1);
-		ft_putnbr_fd(++(data->count_move), 1);
+	{
+		data->map[check_e->old_e_y][check_e->old_e_x] = 'E';
+		check_e->old_e_x = -1;
+		check_e->old_e_y = -1;
+	}
+	destroy(data);
+	xpm_to_image(data);
+	image_to_win(data);
+	ft_putstr_fd("\rmovements total: ", 1);
+	ft_putnbr_fd(++(data->count_move), 1);
 }
 
 void	check_move_vertical(t_data *data, t_pos pos, int n, t_pos_e *check_e)

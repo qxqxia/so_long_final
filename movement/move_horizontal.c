@@ -3,37 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   move_horizontal.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 01:11:46 by qinxia            #+#    #+#             */
-/*   Updated: 2022/04/01 01:11:46 by qinxia           ###   ########.fr       */
+/*   Updated: 2022/04/01 09:59:16 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"so_long.h"
+#include "../so_long.h"
 
-void position_move_h(t_data *data, t_pos pos, int n, t_pos_e *check_e)
+void	position_move_h(t_data *data, t_pos pos, int n, t_pos_e *check_e)
 {
-		if (data->map[pos.i][pos.j + n] == 'E')
-		{
-			check_e->old_e_x = pos.j + n;
-			check_e->old_e_y = pos.i;
-			check_e->check_e = 0;
-		}
-		data->map[pos.i][pos.j + n] = 'P';
-		data->map[pos.i][pos.j] = '0';
-		if (check_e->old_e_x != -1 && \
+	if (data->map[pos.i][pos.j + n] == 'E')
+	{
+		check_e->old_e_x = pos.j + n;
+		check_e->old_e_y = pos.i;
+		check_e->check_e = 0;
+	}
+	data->map[pos.i][pos.j + n] = 'P';
+	data->map[pos.i][pos.j] = '0';
+	if (check_e->old_e_x != -1 && \
 				check_e->old_e_y != -1 && check_e->check_e != 0)
-		{
-			data->map[check_e->old_e_y][check_e->old_e_x] = 'E';
-			check_e->old_e_x = -1;
-			check_e->old_e_y = -1;
-		}
-		destroy(data);
-		xpm_to_image(data);
-		image_to_win(data);
-		ft_putstr_fd("\rmovements total: ", 1);
-		ft_putnbr_fd(++(data->count_move), 1);
+	{
+		data->map[check_e->old_e_y][check_e->old_e_x] = 'E';
+		check_e->old_e_x = -1;
+		check_e->old_e_y = -1;
+	}
+	destroy(data);
+	xpm_to_image(data);
+	image_to_win(data);
+	ft_putstr_fd("\rmovements total: ", 1);
+	ft_putnbr_fd(++(data->count_move), 1);
 }
 
 void	check_move_horizontal(t_data *data, t_pos pos, int n, t_pos_e *check_e)

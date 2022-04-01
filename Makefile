@@ -6,7 +6,7 @@
 #    By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/15 10:52:43 by qxia              #+#    #+#              #
-#    Updated: 2022/03/31 14:10:11 by qxia             ###   ########.fr        #
+#    Updated: 2022/04/01 09:57:33 by qxia             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,17 +18,17 @@ CFLAGS = -Wall -Wextra -Werror
 
 DEBUG = -fsanitize=address -g3
 
-MLXFLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit
+MLXFLAGS = -lmlx -framework OpenGL -framework AppKit
 
-SRC = images.c \
-	  so_long.c \
-	  check_arguments.c\
-	  check_map.c \
-	  key_mouse_event.c \
-	  move_horizontal.c \
-	  move_vertical.c \
-	  so_long_utils.c \
-	  fini_game.c \
+SRC = src/images.c \
+	  src/so_long.c \
+	  src/check_arguments.c\
+	  src/check_map.c \
+	  movement/key_mouse_event.c \
+	  movement/move_horizontal.c \
+	  movement/move_vertical.c \
+	  src/so_long_utils.c \
+	  src/fini_game.c \
 	  gnl/get_next_line.c \
 	  gnl/get_next_line_utils.c \
 

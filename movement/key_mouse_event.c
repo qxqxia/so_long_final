@@ -6,11 +6,11 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 12:04:34 by qxia              #+#    #+#             */
-/*   Updated: 2022/03/31 17:00:31 by qxia             ###   ########.fr       */
+/*   Updated: 2022/04/01 09:59:08 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 int	key_event(int keycode, t_data *data)
 {

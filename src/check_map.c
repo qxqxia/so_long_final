@@ -3,58 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qinxia <qinxia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:41:29 by qxia              #+#    #+#             */
-/*   Updated: 2022/04/01 00:43:03 by qinxia           ###   ########.fr       */
+/*   Updated: 2022/04/01 09:58:20 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
-
-static int	check_coin(t_data *data)
-{
-	if (num_coin(data) < 1)
-	{
-		ft_putstr_fd("Error: incorrect collectible.\n", 2);
-		free_map(data);
-		return (-1);
-	}
-	return (0);
-}
-
-static int	check_player(t_data *data)
-{
-	static int		player_count;
-	int		i;
-	int		j;
-
-	i = 0;
-	while (i < data->row)
-	{
-		j = 0;
-		while (j < data->col)
-		{
-			if (data->map[i][j] == 'P')
-				player_count++;
-			j++;
-		}
-		i++;
-	}
-	if (player_count != 1)
-	{
-		ft_putstr_fd("Error: only one player is allowed.\n", 2);
-		free_map(data);
-		return (-1);
-	}
-	return (0);
-}
+#include "../so_long.h"
 
 static int	check_exit(t_data *data)
 {
 	static int		exit_count;
-	int		i;
-	int		j;
+	int				i;
+	int				j;
 
 	i = 0;
 	while (i < data->row)

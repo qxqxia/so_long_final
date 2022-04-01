@@ -6,11 +6,11 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 09:58:46 by qxia              #+#    #+#             */
-/*   Updated: 2022/03/31 17:19:02 by qxia             ###   ########.fr       */
+/*   Updated: 2022/04/01 11:36:30 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	xpm_to_image(t_data *data)
 {
@@ -29,10 +29,24 @@ void	xpm_to_image(t_data *data)
 			"image/collect.xpm", &img_width, &img_height);
 }
 
+void	*pointer_image(t_data *data, int i, int j)
+{
+	if (data->map[i][j] == 'P')
+		return (data->sprite);
+	else if (data->map[i][j] == '1')
+		return (data->wall);
+	else if (data->map[i][j] == 'C')
+		return (data->collect);
+	else if (data->map[i][j] == 'E')
+		return (data->door);
+	return (0);
+}
+
 void	image_to_win(t_data *data)
 {
-	int	i;
-	int	j;
+	void	*p;
+	int		i;
+	int		j;
 
 	i = 0;
 	while (i < data->row)
@@ -40,17 +54,14 @@ void	image_to_win(t_data *data)
 		j = 0;
 		while (j < data->col)
 		{
-			mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->floor, (32 * j), (32 * i));
-			if (data->map[i][j] == 'P')
-				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->sprite, (32 * j), (32 * i));
-			else if (data->map[i][j] == '1')
-				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->wall, (32 * j), (32 * i));
-			else if (data->map[i][j] == 'C')
-				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->collect, (32 * j), (32 * i));
-			else if (data->map[i][j] == 'E')
-				mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->door, (32 * j), (32 * i));
+			mlx_put_image_to_window(data->mlx_ptr, \
+					data->win_ptr, data->floor, 32 * j, 32 * i);
+			p = pointer_image(data, i, j);
+			if (p)
+				mlx_put_image_to_window(data->mlx_ptr, \
+						data->win_ptr, p, 32 * j, 32 * i);
 			j++;
 		}
-	i++;
+		i++;
 	}
 }

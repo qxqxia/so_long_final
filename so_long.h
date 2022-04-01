@@ -6,7 +6,7 @@
 /*   By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 10:53:49 by qxia              #+#    #+#             */
-/*   Updated: 2022/03/31 17:06:30 by qxia             ###   ########.fr       */
+/*   Updated: 2022/04/01 10:48:32 by qxia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,7 @@ void	check_arguments(int argc, char **argv);
 int		check_map(t_data *data);
 char	*ft_map_error(int error_code);
 void	ft_exit_error(int error_code, t_data *data);
+int		check_coin(t_data *data);
+int		check_player(t_data *data);
 
 #endif
