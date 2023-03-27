@@ -1,20 +1,8 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: qxia <qxia@student.42.fr>                  +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/15 10:52:43 by qxia              #+#    #+#              #
-#    Updated: 2022/04/01 12:55:01 by qxia             ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+NAME		= so_long
 
-NAME		=	so_long
+CC		= gcc
 
-CC			=	gcc
-
-CFLAGS		= 	-Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror
 
 DEBUG 		= -fsanitize=address -g3
 
